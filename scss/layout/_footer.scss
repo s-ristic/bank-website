@@ -1,0 +1,108 @@
+@use '../utils' as *;
+
+.footer {
+  background: $bg-footer-color;
+  color: $light-color;
+
+  &__columns {
+    padding: 5rem 3rem 0;
+    @include grid(1, 3rem 4rem);
+
+    @include mq(lg) {
+      padding: 8rem 10rem 0;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  &__column {
+    &:first-of-type {
+      width: 26rem;
+
+      @include mq(lg) {
+        width: 33rem;
+      }
+
+      p {
+        margin: 2rem 0;
+      }
+
+      ul {
+        display: flex;
+
+        li {
+          margin-right: 2rem;
+        }
+
+        a {
+          width: 3.5rem;
+          height: 3.5rem;
+          text-align: center;
+          line-height: 3.5rem;
+          border-radius: border-radius(circle);
+          font-size: font-size(xl);
+          background: $light-color;
+          color: $bg-footer-color;
+        }
+      }
+    }
+
+    ul {
+      li {
+        margin-top: 1rem;
+      }
+
+      a {
+        color: $light-color;
+        opacity: opacity(5);
+        @extend %transition;
+
+        &:hover {
+          opacity: opacity(10);
+        }
+      }
+    }
+  }
+
+  img {
+    position: relative;
+    width: 13rem;
+    height: 4rem;
+  }
+
+  &__copyright {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem 3rem;
+    margin-top: 5rem;
+    @include flex(column);
+
+    @include mq(lg) {
+      padding: 2rem 10rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    ul {
+      display: flex;
+
+      li {
+        padding: 0 2rem;
+
+        &:first-of-type {
+          border-right: 0.1rem solid;
+        }
+      }
+
+      a {
+        color: $light-color;
+        font-size: font-size(s);
+        opacity: opacity(5);
+        @extend %transition;
+
+        &:hover {
+          opacity: opacity(10);
+        }
+      }
+    }
+  }
+}

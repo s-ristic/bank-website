@@ -1,0 +1,85 @@
+@use '../utils' as *;
+
+.customize {
+  padding: 5rem 3rem 12rem;
+  background: $bg-two-color;
+  @include flex(column);
+  overflow: hidden;
+
+  @include mq(lg) {
+    padding: 12rem 10rem;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &__content {
+    width: 100%;
+    margin-bottom: 5rem;
+
+    @include mq(lg) {
+      width: 55%;
+      margin-bottom: 0;
+      margin-right: 5%;
+    }
+  }
+
+  &__card {
+    background: $light-color;
+    padding: 2rem;
+    border-radius: border-radius(l);
+    border: 0.1rem solid $fraud-color;
+    @include flex(column);
+    @extend %transition;
+
+    @include mq(lg) {
+      padding: 4rem;
+      flex-direction: row;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 3rem;
+    }
+
+    &:hover {
+      box-shadow: box-shadow(xl);
+    }
+
+    &ImageBox {
+      position: relative;
+      min-width: 7rem;
+      height: 7rem;
+      margin-right: 2rem;
+      background: $bg-two-color;
+      border-radius: border-radius(circle);
+
+      img {
+        top: 1.5rem;
+        left: 1.5rem;
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+  }
+
+  &__imageBox {
+    position: relative;
+    width: 26rem;
+    height: 35.75rem;
+
+    @include mq(lg) {
+      width: 40rem;
+      height: 55rem;
+    }
+
+    img {
+      object-fit: cover;
+      box-shadow: box-shadow(xxl);
+      border-radius: border-radius(l);
+    }
+
+    @include pseudo($top: 6rem, $left: 10%, $width: 120%, $height: 110%) {
+      background: linear-gradient(transparent 10%, $bg-one-color);
+      border-radius: border-radius(xl);
+    }
+  }
+}

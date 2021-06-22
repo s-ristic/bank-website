@@ -1,0 +1,124 @@
+@use '../utils' as *;
+
+.transaction {
+  padding: 15rem 3rem 5rem;
+  background: $bg-two-color;
+
+  @include mq(lg) {
+    padding: 15rem 10rem 12rem;
+  }
+
+  > div {
+    @include flex(column);
+
+    @include mq(lg) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__card {
+    position: relative;
+    max-width: 32rem;
+    margin: 0 1rem;
+    background: $light-color;
+    padding: 3rem;
+    border-radius: border-radius(l);
+    box-shadow: box-shadow(l);
+
+    &:first-of-type {
+      .transaction__content {
+        margin-top: 3rem;
+        display: flex;
+
+        div {
+          width: 45%;
+          min-height: 100%;
+          padding: 1rem;
+          border-radius: border-radius(m);
+
+          &:first-of-type {
+            background: $fraud-color;
+            margin-right: 5%;
+          }
+          &:last-of-type {
+            background: $payment-color;
+          }
+        }
+
+        img {
+          position: relative;
+          width: 3rem;
+          height: 3rem;
+          margin: 2rem auto;
+        }
+      }
+    }
+
+    &:nth-of-type(2) {
+      margin: 4rem 0;
+
+      @include mq(lg) {
+        margin: 8rem 0 0 0;
+      }
+    }
+
+    &:last-of-type {
+      .transaction__top {
+        padding: 1rem;
+
+        &:first-of-type {
+          background: $fraud-color;
+        }
+
+        &:last-of-type {
+          background: $payment-color;
+        }
+      }
+    }
+  }
+
+  &__headline {
+    @include flex();
+
+    img {
+      position: relative;
+      width: 5rem;
+      height: 5rem;
+      margin-right: 1rem;
+    }
+  }
+
+  &__content {
+    a {
+      display: block;
+      text-align: center;
+      background: $checkout-color;
+      color: $text-color;
+      padding: 2rem 0;
+      margin-top: 2rem;
+      font-weight: font-weight(bold);
+      border-radius: border-radius(m);
+    }
+  }
+
+  &__top {
+    margin-top: 3rem;
+    @include flex();
+
+    img {
+      position: relative;
+      width: 5rem;
+      height: 5rem;
+      margin-right: 1rem;
+      border-radius: border-radius(s);
+    }
+
+    span {
+      display: block;
+      margin-top: 0.5rem;
+      font-weight: font-weight(bold);
+    }
+  }
+}

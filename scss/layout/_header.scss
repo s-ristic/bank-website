@@ -1,0 +1,357 @@
+@use '../utils' as *;
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: $bg-one-color;
+
+  &__bg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: max-content;
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    font-weight: font-weight(bold);
+    font-size: 31vw;
+    background: linear-gradient($light-color 20%, transparent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    @include pseudo() {
+      top: 33%;
+      left: 8%;
+      width: 5.5%;
+      height: 12.5%;
+      background: url('../images/header-man-left.png') center/100% 100%;
+    }
+
+    @include pseudo($location: after, $left: initial) {
+      top: 5.5%;
+      right: 2.5%;
+      width: 5.5%;
+      height: 17%;
+      background: url('../images/header-man-right.png') center/100% 100%;
+    }
+  }
+  nav {
+    position: relative;
+    padding: 1rem 3rem;
+    @include flex($justify-content: space-between);
+    z-index: 10;
+
+    @include mq(lg) {
+      padding: 3rem 5rem;
+    }
+
+    > a {
+      position: relative;
+      width: 11.5rem;
+      height: 3rem;
+    }
+
+    ul {
+      @include flex(column);
+      position: absolute;
+      top: 9rem;
+      right: 0;
+      width: 67%;
+      background: $bg-one-color;
+      border: 0.2rem solid $text-color;
+      padding: 3rem 0;
+      visibility: hidden;
+      opacity: 0;
+      @extend %transition;
+
+      @include mq(lg) {
+        flex-direction: row;
+        position: relative;
+        top: initial;
+        right: initial;
+        border: none;
+        padding: 0;
+        visibility: visible;
+        opacity: 1;
+      }
+
+      li {
+        &:not(:last-of-type) {
+          margin-bottom: 5rem;
+
+          @include mq(lg) {
+            margin-bottom: 0;
+            margin-right: 4rem;
+          }
+
+          a {
+            font-weight: font-weight(bold);
+            color: $text-color;
+            @extend %transition;
+
+            &:hover {
+              opacity: opacity(5);
+            }
+          }
+        }
+        &:last-of-type {
+          @include mq(lg) {
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+
+  &__navBtn {
+    border: none;
+    outline: none;
+    background: none;
+    width: 5rem;
+    height: 5rem;
+    font-size: font-size(xl);
+
+    @include mq(lg) {
+      display: none;
+    }
+  }
+
+  nav.menu--open ul {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__myaccountBtn {
+    position: relative;
+    border: none;
+    outline: none;
+    background: none;
+    font-weight: font-weight(bold);
+    font-size: font-size(m);
+    padding-right: 4.5rem;
+    cursor: pointer;
+
+    span {
+      position: absolute;
+      right: 0;
+      display: block;
+      height: 0.3rem;
+      background: $text-color;
+
+      &:nth-of-type(1) {
+        width: 2.5rem;
+        top: -0.4rem;
+      }
+      &:nth-of-type(2) {
+        width: 2rem;
+        top: 0.6rem;
+      }
+      &:nth-of-type(3) {
+        width: 1.5rem;
+        top: 1.6rem;
+      }
+    }
+  }
+
+  &__images {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 60rem;
+    @include flex(row, space-between, flex-start);
+
+    > img {
+      position: relative;
+      width: 100%;
+
+      @include mq(lg) {
+        width: 40rem;
+      }
+    }
+  }
+
+  &__smallImages {
+    position: relative;
+    margin: 15rem 0 0 3rem;
+    width: 40rem;
+    height: 15rem;
+
+    @include mq(lg) {
+      height: 20rem;
+    }
+
+    div {
+      position: absolute;
+      width: 4rem;
+      height: 4rem;
+      background: $light-color;
+      box-shadow: box-shadow(hard);
+
+      @include mq(lg) {
+        width: 6rem;
+        height: 6rem;
+      }
+
+      @include pseudo(
+        $top: -1rem,
+        $left: -1rem,
+        $width: calc(100% + 2rem),
+        $height: calc(100% + 2rem)
+      ) {
+        background: $light-transparent;
+        border-radius: border-radius(s);
+        border: 0.1rem solid $light-color;
+        box-sizing: border-box;
+      }
+
+      &:first-of-type {
+        bottom: 3rem;
+        left: 0;
+      }
+      &:nth-of-type(2) {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:last-of-type {
+        bottom: 0;
+        right: 0;
+      }
+
+      img {
+        top: 15%;
+        left: 15%;
+        width: 70%;
+        height: 70%;
+      }
+    }
+  }
+
+  &__tranjectionStats {
+    display: none;
+
+    @include mq(lg) {
+      display: block;
+      position: relative;
+      margin-top: 7rem;
+
+      div {
+        position: relative;
+        width: 17rem;
+        box-shadow: box-shadow(hard);
+
+        @include mq(lg) {
+          width: 20rem;
+        }
+
+        @include pseudo(
+          $top: -1rem,
+          $left: -1rem,
+          $width: calc(100% + 2rem),
+          $height: calc(100% + 2rem)
+        ) {
+          background: $light-transparent;
+          border-radius: border-radius(s);
+          border: 0.1rem solid $light-color;
+        }
+
+        img {
+          border-radius: border-radius(s);
+          object-fit: cover;
+        }
+
+        &:first-of-type {
+          height: 22rem;
+        }
+        &:last-of-type {
+          margin-top: 4rem;
+          height: 7rem;
+        }
+      }
+    }
+  }
+
+  &__form {
+    position: absolute;
+    bottom: 10rem;
+    right: 50%;
+    transform: translateX(50%);
+    width: 28rem;
+    z-index: 2;
+
+    @include mq(lg) {
+      bottom: 5rem;
+      right: 8vw;
+      transform: translateX(0);
+      width: max-content;
+    }
+
+    @include pseudo(
+      $top: -1rem,
+      $left: -1rem,
+      $width: calc(100% + 2rem),
+      $height: calc(100% + 2rem)
+    ) {
+      background: $light-transparent;
+      border-radius: border-radius(s);
+      border: 0.1rem solid $light-color;
+    }
+
+    @include pseudo($location: after, $top: initial, $left: -3rem) {
+      bottom: -5rem;
+      background: #f5f0eb;
+      border-radius: border-radius(s);
+      z-index: -1;
+    }
+
+    form {
+      position: relative;
+      background: $light-color;
+      height: 12rem;
+      padding: 1rem;
+      border-radius: border-radius(s);
+      @include flex(column);
+
+      @include mq(lg) {
+        flex-direction: row;
+        height: 7rem;
+      }
+
+      label {
+        position: absolute;
+        top: 0.5rem;
+        font-size: font-size(m);
+        font-weight: font-weight(bold);
+        color: $text-color;
+        opacity: opacity(5);
+      }
+
+      input {
+        height: 3rem;
+        margin-right: 1rem;
+        font-weight: font-weight(bold);
+        font-size: font-size(l);
+      }
+
+      button {
+        height: 5rem;
+        padding: 0 4rem;
+        font-weight: font-weight(bold);
+        border-radius: border-radius(s);
+        font-size: font-size(l);
+        background: $red-color;
+        color: $light-color;
+        margin-top: 1rem;
+        cursor: pointer;
+
+        @include mq(lg) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

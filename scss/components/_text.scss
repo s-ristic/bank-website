@@ -1,0 +1,157 @@
+@use '../utils/' as *;
+
+h1 {
+  position: absolute;
+  bottom: -10rem;
+  left: 10vw;
+  text-transform: uppercase;
+  font-size: font-size(xxl);
+  line-height: 1;
+  z-index: 3;
+  pointer-events: none;
+
+  @include mq(lg) {
+    bottom: -5rem;
+    font-size: font-size(xxxl);
+  }
+}
+
+h2 {
+  font-size: font-size(xxl);
+  margin-bottom: 4rem;
+}
+
+h3 {
+  font-size: font-size(xl);
+}
+
+h4 {
+  font-size: font-size(s);
+}
+
+p {
+  font-size: font-size(m);
+}
+
+.transaction {
+  h2 {
+    max-width: 60rem;
+    margin: 0 auto 6rem;
+    text-align: center;
+
+    @include mq(lg) {
+      margin: 0 auto 8rem;
+    }
+  }
+
+  &__card {
+    &:first-of-type {
+      p {
+        text-align: center;
+      }
+    }
+  }
+  p {
+    font-size: font-size(s);
+    opacity: opacity(7);
+  }
+}
+
+.money {
+  &__content {
+    > p {
+      padding-left: 2rem;
+      border-left: 0.3rem solid $text-color;
+      font-style: italic;
+    }
+  }
+
+  h3 {
+    margin: 1.5rem 0;
+  }
+}
+
+.customize {
+  h3 {
+    margin-bottom: 2rem;
+  }
+}
+
+.users {
+  h2 {
+    grid-column: 1/-1;
+    text-align: center;
+  }
+
+  h3 {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+
+    span {
+      display: block;
+      font-size: 0.7em;
+      margin-top: 1rem;
+      opacity: opacity(7);
+    }
+  }
+
+  p {
+    position: absolute;
+    bottom: 2rem;
+    left: -2rem;
+    width: 100%;
+    padding: 3rem 1.5rem;
+    background: $bg-one-color;
+    border-radius: border-radius(m);
+    z-index: 1;
+
+    @include pseudo(before, '\f10e', absolute, 2rem, initial, initial, initial) {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      right: 2rem;
+      font-size: font-size(xl);
+      opacity: opacity(1);
+    }
+  }
+}
+
+.apps {
+  h2 {
+    text-align: center;
+  }
+  p {
+    max-width: 56rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.footer {
+  h2 {
+    font-size: font-size(l);
+  }
+
+  p {
+    opacity: opacity(5);
+  }
+
+  &__column {
+    &:first-of-type {
+      h2 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__copyright {
+    p {
+      font-size: font-size(s);
+      margin-bottom: 2rem;
+
+      @include mq(lg) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

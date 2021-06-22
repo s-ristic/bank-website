@@ -1,0 +1,44 @@
+@use '../utils' as *;
+
+.apps {
+  background: $bg-two-color;
+  padding: 5rem 0;
+
+  @include mq(lg) {
+    padding: 10rem 0;
+  }
+
+  &__content {
+    width: 75%;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, transparent, $bg-one-color);
+    border-radius: border-radius(l);
+
+    img {
+      position: relative;
+      width: 10rem;
+      height: 3.5rem;
+
+      @include mq(lg) {
+        width: 20rem;
+        height: 7rem;
+      }
+    }
+  }
+
+  &__imageBox {
+    margin-top: 5rem;
+    @include flex();
+
+    img {
+      object-fit: cover;
+      border-radius: border-radius(s);
+      box-shadow: box-shadow(xl);
+
+      &:first-of-type {
+        margin-right: 4rem;
+      }
+    }
+  }
+}

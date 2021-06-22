@@ -1,0 +1,44 @@
+@use '../utils' as *;
+
+.users {
+  padding: 5rem 3rem;
+  background: $bg-three-color;
+  @include grid(1) {
+    justify-items: center;
+  }
+
+  @include mq(lg) {
+    padding: 8rem 12rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+  }
+
+  &__card {
+    position: relative;
+    width: 100%;
+    max-width: 35rem;
+    height: 43rem;
+
+    @include pseudo($left: 20%, $width: 80%) {
+      background: $light-color;
+      border-radius: border-radius(m);
+    }
+
+    @include pseudo(after, '\f10e', absolute, 30%, initial, initial, initial) {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      right: 2rem;
+      color: $bg-one-color;
+      font-size: font-size(xxxl);
+      opacity: opacity(3);
+    }
+  }
+
+  img {
+    position: relative;
+    width: 17rem;
+    height: 28rem;
+    margin-top: 5rem;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Bank Website</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script defer src="./js/index.js"></script>
+  </head>
+
+  <body>
+    <!-- header -->
+
+    <header id="header" class="header">
+      <nav>
+        <a href="#"><img src="./images/logo.png" alt="" /></a>
+        <ul>
+          <li><a href="#feature">Feature</a></li>
+          <li><a href="#payment">Payment</a></li>
+          <li><a href="#app">App</a></li>
+          <li><a href="#card">Card</a></li>
+
+          <li>
+            <button class="header__myaccountBtn">
+              My Account <span></span><span></span><span></span>
+            </button>
+          </li>
+        </ul>
+
+        <button class="header__navBtn"><i class="fas fa-bars"></i></button>
+      </nav>
+
+      <div class="header__bg">
+        <span>Bank</span>
+      </div>
+
+      <h1>
+        Simple <br />
+        & Smart <br />
+        E-Payment
+      </h1>
+
+      <div class="header__images">
+        <div class="header__smallImages">
+          <div><img src="./images/logo-google-wallet.png" alt="" /></div>
+          <div><img src="./images/logo-visa.png" alt="" /></div>
+          <div><img src="./images/logo-mastercard.png" alt="" /></div>
+        </div>
+
+        <img src="./images/header.png" alt="" class="header__centerImage" />
+
+        <div class="header__tranjectionStats">
+          <div><img src="./images/tranjection-stats.png" alt="" /></div>
+          <div><img src="./images/deposite.png" alt="" /></div>
+        </div>
+      </div>
+
+      <div class="header__form">
+        <form action="#" method="POST">
+          <div class="header__formInputBox">
+            <label for="email">Your Email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <button type="submit">Get Started</button>
+        </form>
+      </div>
+    </header>
+
+    <main>
+      <!-- transaction -->
+
+      <section id="transaction" class="transaction">
+        <h2>Take your transaction to the next level</h2>
+
+        <div>
+          <div class="transaction__card">
+            <div class="transaction__headline">
+              <img src="./images/icon-1.png" alt="" />
+              <h3>Fraud Detection</h3>
+            </div>
+
+            <div class="transaction__content">
+              <div class="transactionContentLeft">
+                <img src="./images/icon-s-1.png" alt="" />
+                <p>Credit card fraud auto detection</p>
+              </div>
+              <div class="transactionContentRight">
+                <img src="./images/icon-s-2.png" alt="" />
+                <p>Fake payment detection</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="transaction__card">
+            <div class="transaction__headline">
+              <img src="./images/icon-2.png" alt="" />
+              <h3>Payment Types</h3>
+            </div>
+
+            <div class="transaction__content">
+              <div class="transaction__top">
+                <img src="./images/payment-girl.jpg" alt="" />
+                <div>
+                  <p>We accept many type payment getaway that you love.</p>
+                  <span>Julien Smith</span>
+                </div>
+              </div>
+              <a href="#checkalltypes">Check All Types</a>
+            </div>
+          </div>
+
+          <div class="transaction__card">
+            <div class="transaction__headline">
+              <img src="./images/icon-3.png" alt="" />
+              <h3>Simple Checkout</h3>
+            </div>
+
+            <div class="transaction__content">
+              <div class="transaction__top">
+                <img src="./images/logo-amazon.png" alt="" />
+                <p>Amazon products payment due.</p>
+              </div>
+              <div class="transaction__top">
+                <img src="./images/logo-netflix.png" alt="" />
+                <p>Netflix subscription payment due.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- send money  -->
+
+      <section id="money" class="money">
+        <div class="money__imageBox">
+          <img src="./images/man-mobile.png" alt="" />
+
+          <div class="money__smallImages">
+            <div><img src="./images/logo-mastercard.png" alt="" /></div>
+            <div><img src="./images/logo-google-wallet.png" alt="" /></div>
+            <div><img src="./images/logo-visa.png" alt="" /></div>
+            <div><img src="./images/logo-cirrus.png" alt="" /></div>
+          </div>
+        </div>
+
+        <div class="money__content">
+          <h2>Send your money from anywhere you like</h2>
+          <p>
+            The aim of our Banking and risk to give you the knowledge,
+            understanding and key skills that will enable to be effective risk
+            analysts and managers in financial institutions, especially banks.
+          </p>
+
+          <div class="money__bottom">
+            <div>
+              <img src="./images/icon-4.png" alt="" />
+              <h3>Online Payments</h3>
+              <p>We accept many type payments that you love.</p>
+            </div>
+
+            <div>
+              <img src="./images/icon-5.png" alt="" />
+              <h3>Safe Deposit</h3>
+              <p>You can trust us for your deposit. No hidden fee.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- customize payments -->
+
+      <section id="customize" class="customize">
+        <div class="customize__content">
+          <h2>Customize your payments</h2>
+
+          <div class="customize__card">
+            <div class="customize__cardImageBox">
+              <img src="./images/icon-6.png" alt="" />
+            </div>
+            <div class="customize__cardContent">
+              <h3>Set daily maximum transaction limitation.</h3>
+              <p>
+                Add human clarity to complexity and build confidence in your
+                business relationships with Mastercard cybersecurity solutions.
+              </p>
+            </div>
+          </div>
+
+          <div class="customize__card">
+            <div class="customize__cardImageBox">
+              <img src="./images/icon-7.png" alt="" />
+            </div>
+            <div class="customize__cardContent">
+              <h3>Customize your next payment schedule.</h3>
+              <p>
+                With a fast and easy tap of your Mastercard, you can enjoy
+                convenient checkout for everyday purchases.
+              </p>
+            </div>
+          </div>
+
+          <div class="customize__card">
+            <div class="customize__cardImageBox">
+              <img src="./images/icon-8.png" alt="" />
+            </div>
+            <div class="customize__cardContent">
+              <h3>Get latest update about your payments.</h3>
+              <p>
+                Mastercard main street resource center is here to help you small
+                business adjust to the new way of working.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="customize__imageBox">
+          <img src="./images/bank-card.png" alt="" />
+        </div>
+      </section>
+
+      <!-- users say -->
+
+      <section id="users" class="users">
+        <h2>What our users says</h2>
+
+        <div class="users__card">
+          <img src="./images/user-1.png" alt="" />
+          <h3>
+            Candice <br />
+            P. Villalobos
+            <span>Businessman</span>
+          </h3>
+          <p>
+            It fits our needs perfectly. Bank is great. We've used bank for the
+            last five years. I'd be lost without big bank.
+          </p>
+        </div>
+
+        <div class="users__card">
+          <img src="./images/user-2.png" alt="" />
+          <h3>
+            Morris <br />
+            Monahan
+            <span>UI/UX Designer</span>
+          </h3>
+          <p>
+            Dude, your stuff is the bomb! I will recommend you to my colleagues.
+            Big bank was the best investments I ever made.
+          </p>
+        </div>
+
+        <div class="users__card">
+          <img src="./images/user-3.png" alt="" />
+          <h3>
+            Naomi <br />
+            D. Courtney
+            <span>Freelancer</span>
+          </h3>
+          <p>
+            I'd be lost without bank. Thanks guys, keep up the good work! If you
+            want real marketing that works and effective.
+          </p>
+        </div>
+      </section>
+
+      <!-- discover apps -->
+
+      <section id="apps" class="apps">
+        <div class="apps__content">
+          <h2>Discover our mobile app</h2>
+          <p>
+            Big bank mobile app an main resource center is here to help you with
+            adjust to the new way of working.
+          </p>
+
+          <div class="apps__imageBox">
+            <img src="./images/btn-app-store.png" alt="" />
+            <img src="./images/btn-google-play.png" alt="" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+
+    <footer id="footer" class="footer">
+      <div class="footer__columns">
+        <div class="footer__column">
+          <img src="./images/logo-footer.png" alt="" />
+          <p>
+            Big bank mobile app an main resource center is here to help yu with
+            adjust to the new way of working.
+          </p>
+
+          <h2>Follow us</h2>
+          <ul>
+            <li>
+              <a href="#facebook"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#instagram"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#twitter"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#linkedin"><i class="fab fa-linkedin-in"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__column">
+          <h2>Payment</h2>
+          <ul>
+            <li><a href="#nothing">Fraud detection</a></li>
+            <li><a href="#nothing">Simple checkout</a></li>
+            <li><a href="#nothing">Payments types</a></li>
+            <li><a href="#nothing">Master card</a></li>
+            <li><a href="#nothing">Customize</a></li>
+          </ul>
+        </div>
+        <div class="footer__column">
+          <h2>Features</h2>
+          <ul>
+            <li><a href="#nothing">Mobile app</a></li>
+            <li><a href="#nothing">Money exchange</a></li>
+            <li><a href="#nothing">Pre payment</a></li>
+            <li><a href="#nothing">Get Update</a></li>
+            <li><a href="#nothing">Rate alert</a></li>
+          </ul>
+        </div>
+        <div class="footer__column">
+          <h2>Company</h2>
+          <ul>
+            <li><a href="#nothing">News &amp; Blogs</a></li>
+            <li><a href="#nothing">Learn more</a></li>
+            <li><a href="#nothing">About us</a></li>
+            <li><a href="#nothing">Career</a></li>
+            <li><a href="#nothing">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer__column">
+          <h2>Resources</h2>
+          <ul>
+            <li><a href="#nothing">Customer support</a></li>
+            <li><a href="#nothing">Contact us</a></li>
+            <li><a href="#nothing">Live chat</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__copyright">
+        <p>Copyright, Savo Ristic, 2021. All rights reserved.</p>
+
+        <ul>
+          <li><a href="#nothing">Privacy &amp; Policy</a></li>
+          <li><a href="#nothing">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>

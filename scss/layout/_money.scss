@@ -1,0 +1,108 @@
+@use '../utils' as *;
+
+.money {
+  padding: 5rem 3rem;
+  background: $bg-three-color;
+  @include flex(column-reverse);
+
+  @include mq(lg) {
+    padding: 5rem 10rem;
+    flex-direction: row;
+  }
+
+  &__imageBox {
+    position: relative;
+    min-width: 26rem;
+    height: 31.7rem;
+    margin-top: 5rem;
+    overflow: hidden;
+    z-index: 0;
+
+    @include mq(lg) {
+      min-width: 45rem;
+      height: 55rem;
+      margin-top: 0;
+      margin-right: 10rem;
+    }
+
+    @include pseudo($top: 15%, $width: 50%, $height: 85%) {
+      background: $bg-one-color;
+      border-radius: border-radius(xl);
+    }
+    @include pseudo($location: after, $top: 7%, $left: initial, $width: 50%, $height: 93%) {
+      right: 0;
+      background: $checkout-color;
+      border-radius: border-radius(xl);
+      transform: skewY(15deg);
+      z-index: -1;
+    }
+  }
+
+  &__smallImages {
+    position: relative;
+    height: 100%;
+
+    div {
+      position: absolute;
+      width: 5rem;
+      height: 5rem;
+      background: $light-color;
+      box-shadow: box-shadow(hard);
+
+      @include pseudo(
+        $top: -0.8rem,
+        $left: -0.8rem,
+        $width: calc(100% + 1.6rem),
+        $height: calc(100% + 1.6rem)
+      ) {
+        background: $light-transparent;
+        border-radius: border-radius(s);
+        border: 0.1rem solid $light-color;
+        box-sizing: border-box;
+      }
+
+      &:nth-of-type(1) {
+        top: 30%;
+        left: 20%;
+      }
+      &:nth-of-type(2) {
+        top: 70%;
+        left: 15%;
+      }
+      &:nth-of-type(3) {
+        top: 25%;
+        right: 8%;
+      }
+      &:nth-of-type(4) {
+        top: 60%;
+        right: 5%;
+      }
+
+      img {
+        top: 15%;
+        left: 15%;
+        width: 70%;
+        height: 70%;
+      }
+    }
+  }
+
+  &__content {
+    max-width: 58rem;
+
+    img {
+      position: relative;
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+
+  &__bottom {
+    @include flex(row, space-between, flex-start);
+    margin-top: 3rem;
+
+    div {
+      width: 45%;
+    }
+  }
+}
